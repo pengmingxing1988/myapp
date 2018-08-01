@@ -1,0 +1,6 @@
+{
+	"navigationBarTitleText": "广告管理",
+	"usingComponents": {
+	  "adslist": "/components/ads/list"
+	}
+}

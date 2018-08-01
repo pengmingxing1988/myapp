@@ -1,0 +1,51 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/business/index",
+    "pages/collection/index",
+    "pages/mycenter/index",
+    "pages/mycenter/ads/watched",
+    "pages/mycenter/ads/list",
+    "pages/mycenter/ads/create",
+    "pages/login/index",
+    "pages/ads/detail"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "智晓广告",
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh": false,
+    "backgroundColor": "#707070"
+  },
+  "tabBar": {
+    "color": "#bfbfbf",
+    "selectedColor": "#d81e06",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "assets/images/home.png",
+        "selectedIconPath": "assets/images/home-selected.png"
+      },
+      {
+        "pagePath": "pages/business/index",
+        "text": "商家",
+        "iconPath": "assets/images/business.png",
+        "selectedIconPath": "assets/images/business-selected.png"
+      },
+      {
+        "pagePath": "pages/collection/index",
+        "text": "收藏",
+        "iconPath": "assets/images/collection.png",
+        "selectedIconPath": "assets/images/collection-selected.png"
+      },
+      {
+        "pagePath": "pages/mycenter/index",
+        "text": "我的",
+        "iconPath": "assets/images/mycenter.png",
+        "selectedIconPath": "assets/images/mycenter-selected.png"
+      }
+    ]
+  }
+}

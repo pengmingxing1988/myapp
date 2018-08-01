@@ -1,0 +1,16 @@
+<!--index.wxml-->
+<view class="container">
+  <swiper class="index-banner" duration="300" circular="true" autoplay="true">
+    <block>
+	  <swiper-item class="index-banner-item">
+	     <image class="index-banner-item" src="../../sources/images/banner01.png"/>
+	     <text>nisiss怡夕二〇一八春夏「草坪合唱团」发布会</text>
+	  </swiper-item>
+	  <swiper-item class="index-banner-item">
+	     <image class="index-banner-item" src="../../sources/images/banner02.png"/>
+	     <text>携手厦门国际银行 中外建金融签银行存管加速合规建设</text>
+	  </swiper-item>
+	</block>
+  </swiper>
+  <adslist datas="{{adsList}}" bind:searchCallback="searchCallback"></adslist>
+</view>

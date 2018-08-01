@@ -1,0 +1,4 @@
+<!--pages/ads/watchedList.wxml-->
+<view class='ad_list'>
+    <adslist datas="{{adsList}}"></adslist>
+</view>

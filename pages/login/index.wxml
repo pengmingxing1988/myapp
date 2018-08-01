@@ -1,0 +1,5 @@
+<!--pages/login/index.wxml-->
+<view class='container'>
+  <button type="primary" wx:if="{{hasUserInfo}}" bindtap="loginClick">授权登录</button>
+  <button type="primary" wx:else open-type="getUserInfo" bindgetuserinfo="getUserInfo">授权登录</button>
+</view>

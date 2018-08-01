@@ -1,0 +1,6 @@
+{
+	"navigationBarTitleText": "我看过的广告",
+	"usingComponents": {
+	  "adslist": "/components/ads/list"
+	}
+}

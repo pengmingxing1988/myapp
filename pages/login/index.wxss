@@ -1,0 +1,4 @@
+/* pages/login/index.wxss */
+page{height:100%;display:flex;}
+.container{flex:1;align-items:center;justify-content:center;}
+.container button{width:100%;}

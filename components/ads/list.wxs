@@ -1,0 +1,20 @@
+// 截取时间
+var formatDate = function (d) {
+  return d.substring(0, 10)
+}
+// 获取广告类型
+var getAdType = function (t) {
+  if (t == 1) {
+    return '推广'
+  } else if (t == 2) {
+    return '促销'
+  } else if (t == 3) {
+    return '需求'
+  } else {
+    return '--'
+  }
+}
+module.exports = {
+  formatDate: formatDate,
+  getAdType: getAdType
+};

@@ -1,0 +1,4 @@
+<!--pages/business/index.wxml-->
+<view class='container'>
+  <businesslist datas="{{datas}}" bind:searchCallback="searchCallback"></businesslist>
+</view>

@@ -1,0 +1,34 @@
+<!--components/ads/adsList.wxml-->
+<wxs src="./list.wxs" module="tools" />
+<view class='ad_list'>
+	<view class="ad_search" wx:if="{{showSearch}}">
+	  <picker range-key="name" value="{{index}}" range="{{adTypes}}" bindchange="adTypeChange">
+	    <view class="picker">
+	      {{formData.a_type ? tools.getAdType(formData.a_type) : '全部'}}
+	    </view>
+      <image src='../../assets/svg/arrow-down.svg'></image>
+	  </picker>
+	  <div class="ad-input-search">
+      <image src='../../assets/svg/search.svg'></image>
+	  	<input placeholder="关键字" bindinput='titleChange'/>
+	  </div>
+	</view>
+	<block wx:if="{{datas && datas.length}}">
+	    <view class="ad_list-item" wx:for="{{datas}}" wx:for-index="index"
+	      data-index="{{index}}" data-value="{{item}}" wx:for-item="item" wx:key="index"
+	      bindtouchstart="touchstart" bindtouchmove="touchmove" bindtap="goToDetail">
+	      <view class='ad_list-item-left'>
+	      	<text class="title">{{item.title}}</text>
+	        <view class="ad_list-item-bottom">
+		       <text class="type">{{tools.getAdType(item.a_type)}}</text>
+		       <text class="place">{{item.file_type==='video'?'视频':'图文'}} / {{tools.formatDate(item.create_date)}}</text>
+		    </view>
+	      </view>
+	      <view class='ad_list-item-right'>
+	      	<image wx:if="{{item.file_type !== 'video'}}" src="{{aliyuncs}}{{item.a_file[0]}}" mode="scaleToFill"></image>
+		    <video wx:else src="{{aliyuncs}}{{item.a_file}}"></video>
+	      </view>
+	    </view>
+    </block>
+    <view wx:else class="ad_list-no-data">{{message}}</view>
+</view>

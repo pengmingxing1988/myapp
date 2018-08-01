@@ -1,0 +1,21 @@
+<!--components/bus/list.wxml-->
+<view class='bus-list'>
+	<view class="bus_search" wx:if="{{showSearch}}">
+	  <div class="bus-input-search">
+      <image src='../../assets/svg/search.svg'></image>
+	  	<input placeholder="关键字" bindinput='titleChange'/>
+	  </div>
+	</view>
+	<block wx:if="{{datas && datas.length}}">
+	    <view class="bus-list-item" wx:for="{{datas}}" wx:for-index="index"
+	      data-index="{{index}}" data-value="{{item}}" wx:for-item="item" 
+        wx:key="index" bindtap="goToDetail">
+          <image src='../../assets/images/default.png'></image>
+          <view class='bus-list-item-text'>
+            <text class='text-title'>我的可乐鸡翅</text>
+            <text class='text-desc'>距离你100m</text>
+          </view>
+	    </view>
+    </block>
+    <view wx:else class="bus_list-no-data">{{message}}</view>
+</view>

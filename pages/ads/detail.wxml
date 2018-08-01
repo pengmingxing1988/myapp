@@ -1,0 +1,18 @@
+<view class="container">
+  <view class="ads_detail_banner" wx:if="{{detail.file_type === 'video'}}">
+  	<video src="{{aliyuncs}}{{detail.a_file}}" controls mode="scaleToFill"></video>
+  </view>
+  <swiper class="ads_detail_banner" wx:else indicator-dots="true" duration="300">
+    <block wx:for="{{detail.a_file}}" wx:for-item="item" wx:for-index="index" wx:key="index">
+	  <swiper-item>
+	     <image src="{{aliyuncs}}{{item}}" mode="scaleToFill"/>
+	  </swiper-item>
+	</block>
+  </swiper>
+  <text class="ads_detail_title">{{detail.title}}</text>
+  <text class="ads_detail_content">{{detail.content}}</text>
+  <view class="ads_detail_df">
+  	<text class="ads_detail_time">{{detail.create_date}}</text>
+  	<view class="ads_detail_favorite icon-favorite {{favorite?'current':''}}" bindtap="favoriteClick"></view>
+  </view>
+</view>

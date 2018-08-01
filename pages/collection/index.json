@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "我的收藏",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+	  "adslist": "/components/ads/list",
+    "buslist": "/components/business/list"
+	}
+}

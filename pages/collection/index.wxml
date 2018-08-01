@@ -1,0 +1,13 @@
+<!--pages/collection/index.wxml-->
+<view class="container">
+  <view class='tabs'>
+    <view class='tab-item {{current=="ads"?"tab-current":""}}' data-current="ads" bindtap="clickTab">广告</view>
+    <view class='tab-item {{current=="bus"?"tab-current":""}}' data-current="bus" bindtap="clickTab">商家</view>
+  </view>
+  <block wx:if='{{current=="ads"}}'>
+  	<adslist showSearch="{{false}}" datas="{{adsList}}"></adslist>
+  </block>
+  <block wx:elif='{{current=="bus"}}'>
+    <buslist showSearch="{{false}}" datas="{{businessList}}"></buslist>
+  </block>
+</view>

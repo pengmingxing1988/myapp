@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "附近商家",
+  "usingComponents": {
+    "businesslist": "/components/business/list"
+  }
+}

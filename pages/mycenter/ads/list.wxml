@@ -1,0 +1,4 @@
+<!--pages/ads/list.wxml-->
+<view class="container">
+  <adslist datas="{{adsList}}"></adslist>
+</view>

@@ -1,0 +1,51 @@
+/**app.wxss**/
+page{font-family:Arial,"\5fae\8f6f\96c5\9ed1";}
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  font-size:14px;
+  color:#333;
+}
+
+.container adslist{diplay:flex;width:100%;flex-direction: column;}
+
+@font-face {
+  font-family: 'icomoon';
+  src: url(data:application/font-woff2;charset=utf-8;base64,d09GMgABAAAAAAOQAA0AAAAAB+AAAAM8AAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP0ZGVE0cGh4GYACCXhEICoRQg1cLFAABNgIkAx4EIAWDGwdjG2wGyK4KbGPYWKe+FNm4KEUO03Zueix/TTWC7/2Lr8+9b/jN0OBKisRsQyiDBpUvFDmd/zv3A6eXdm/WZBOIyGwOXfj/91cDtenK4H0DKEkJVPxnsk4H10lxQ0Tpqyd7eWj5ORgTYbOp/v///97xr+7xcKxBllHPGtM6H6hwrAWYBpJlL+tEa9HyTscXcIBfY2zYNqqMqnF41nO6EwKar3Bo0L5xz8G9daAr+iMJoSoUSMj5rXhUifRc+hKPgFHiT1OjxrUWPU1cBH/P+ePOx7AoIxYQQHekQD7vUAF2YYGhCvNQV5UkYeTvuWOoGKik85OmLNQBhEyUiQxEQoL+maAA7hGiUw9QA71RxXv4FVAAAkH9KUO9AQOkPBY+4oan7xfZvDd9favMbZ7yHnhGF3a3qcn62XpEdv2c3DxAQ8/gbU+rGfO/Iiarxrxr1e+f9d6YlG5tjv/N3zVnN3W+umr2bu5Xe+sPS99vx21T3lpzpn50eMftA/HdCe5otUJh/f5tjYbQrdubTdtyfHvjky8F4WtzrLUuv19gWhMibpv43J67/Z/P/miOd7eOe2jMKn7azL/vv9diW7dQlCKZdvqUfF8uvzwtQ16UPlMtWHWCGcSq6YNSSe6llNZORdjh8l4Ye0VAm1CKjdGjaOR/jaWrEVLbIdXl5CLFWLIqzZKrtf8uv1otRPMRZRdSdjUCm/f3i2nAArv/4vT/pIXLx7azHcWiQwZ8vtLOpg427fANUZBrAQz6/+SvxzX5zed5zU346T/+sHy5wahQGA0Ox8+P073vBwJY99Y3vxzsMe+/agXbXk3nwyLlj1GVQGCP4xWgSPwnQLkAxHYACQXXxmhrgUDNcgQS/xm6e0+AUNFTgKRilABZxSIIChW7ICjp4loIyiqeFKBusO9lUdSE7lREgoFEhklEAatkJf0dkpV1d+eSddO86LTSarZaLeD0CWWTRh0HW9Rat0nuAB+99YNbWueQ5Q61w6kvdCabYBKXwwGRGLa5VjRzL85JteUQ1dylVsUe8XNWI8jIlFfwipsD6ck0fhdxCJzEP71GJCmyHEWUohyV8slzo2YRUa+6UAKAjOfQAAACqVMG) format('woff2'),
+        url(data:application/font-woff;charset=utf-8;base64,d09GRgABAAAAAAVgAA0AAAAAB+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABGRlRNAAAFRAAAABoAAAAchJzcUUdERUYAAAUoAAAAHAAAAB4AJwAPT1MvMgAAAZQAAAA/AAAAYA8TBdhjbWFwAAAB8AAAAFUAAAFeF1fZ42dhc3AAAAUgAAAACAAAAAgAAAAQZ2x5ZgAAAlwAAAGpAAACUAH0m+ZoZWFkAAABMAAAACwAAAA2Ehj5w2hoZWEAAAFcAAAAHQAAACQHxAPHaG10eAAAAdQAAAAbAAAAHgx+AMNsb2NhAAACSAAAABQAAAAUARoBum1heHAAAAF8AAAAFwAAACAADABHbmFtZQAABAgAAADcAAABm/pYTdhwb3N0AAAE5AAAADoAAABj2wKk8XjaY2BkAIOYVRec4vltvjJws4D512uiliDo//tYmJgPALkcDEwgUQA21wr6eNpjYGRgYD7w/wADAwsDCLAwMTAyoAI2AEx+ApUAAAB42mNgZGBg4GRwZWBiAAEIiQQACD8AVAB42mNgZl7FOIGBlYGBaSbTGQYGhn4IzfiawZiRkwEVMAqgCTA4MDC+ZGY+8P8AgwMzEIPUIMkqMDACAFh5CvYAeNpjYYAAxlAIzQTELAwMFYyaDN4MDAAM5QFOAHjaY2BgYGaAYBkGRgYQiADyGMF8FgYbIM3FwMHABISMDAovmf///f8frErhJQOE/f+JOCtYBxcDDDCCzGNkA2JmqAATkGBiQAVAO1gYhjcAACcNDSIAAAAAAAAAAAgACAAQABgARAByAL4BKHjahVDBSutAFL13ZjLpUJEU01Tta4TWZt5DTEmaZFofCEKs8LIRdWFx58r6Be6evJW4FfQndOPGnfgF4if4A27cW52kisJbOIs7586ce87hAsLHIQB9At/3R/BET8gZOADoNU2RF27X0MVumChMIkn/ijkxvhxf6ksIPGRlzssMD4Ugp0KMr3BbP2vGhcGYgSMNtRT+gt/kgWaF7jTWBHKn5oQKVzGOPIkeN7ErUOCO1kU9X9LChsHG56U5QddyvauJo/4wytyYyh1RS+vMGQT0mm5BoJsmN31sNc1pNHnV1h41F4uSx0/UKhYljqSP0mv1CblZ2Wst7vUj309tO5htqWTkSWZWSsIqUSkPVLI4G9h26i9HdEt1Osqp/gnDXrrf7iVq+KNBDc4N2mjsKqXa+2kvDLKq877R11tG6B38hBSgrR3NT+ePhEW8PBt3FvSSVeJhs2DEURG2GxaMql3w6ePzjLSWAtcdDdY3N9cHI9ed4I3jEK3KfT2rz7OXf3HHH9j6DPxO/AUP7ysWhscbXwcnOFiy5Myzy+brGZL/5t4xvAFislo2AAAAeNp1zrFqwlAYxfF/NFq0IJ1K6XRHp6DgA3QqdXDpIB0b4yUE9F6IEXTvI3TsM/RhfCJPwrcmcMPvOzfnI8CMfxLaJ+GBJ/NAnpuH8ps5lb/MIx65mMfKf81TXrmplaQTJbNuQ+uB/GIeygtzKn+YRzzzbR4r/zFPWfFHRUHkqBMJUBXxGKPwiafkzIGcWqMvz4dc6Pu+L99qT81J923uWJLpL9n6+lTF4JbZor/73s2NWqW2hG5TrtmzV7bjqve6626sm6kUQ+NKH3ydN37vdle3LuJG+zLu5ds+Q3jaY2BiwA84GRgYmRiYGJkZmBlZGFkZ2RjZ2dJzKgsyDNlL8zINDAzAtKulgQGUhvGNoLQxAFHADWsAAAABAAH//wAPeNpjYGRgYOABYjEgZmJgBEIOIGYB8xgAA/YAN3jaY2BgYGQAgqtL1DlA9PWaqCUwGgA/IwZMAAA=) format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-arrow-down:before {
+  content: "\e900";
+}
+.icon-arrow-right:before {
+  content: "\e901";
+}
+.icon-favorite:before {
+  content: "\e902";
+}
+.icon-search:before {
+  content: "\e903";
+}
+
