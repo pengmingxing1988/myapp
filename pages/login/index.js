@@ -24,6 +24,8 @@ Page({
   	// 登录
 		wx.login({
 			success: res => {
+				console.log('====小程序登录接口调用成功的回调函数====')
+				console.log(res)
 				api.login(res.code, () => {
 					// 发送 res.code 到后台换取 openId, sessionKey, unionId
 					if (typeof callback === 'function') {
@@ -34,6 +36,10 @@ Page({
 						});
 					}
 				});
+			},
+			fail: res => {
+				console.log('====小程序登录接口调用失败的回调函数====')
+				console.log(res)
 			}
 		})
   },

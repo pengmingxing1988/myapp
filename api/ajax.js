@@ -15,6 +15,8 @@ const ajax = function (url, method, params, success, error) {
 		params = {};
 	}
     url = `${config.domain}${url}`;
+    console.log('====请求接口====')
+    console.log(url)
 	let headers = {'Content-Type': 'application/x-www-form-urlencoded'};
 	if (!params.isLogin) {
 		headers['Cookie'] = wx.getStorageSync('session_id');
@@ -25,6 +27,8 @@ const ajax = function (url, method, params, success, error) {
       data: params,
       header: headers,
       success: function (res) {
+      	console.log('====成功====')
+      	console.log(res)
         if (res.statusCode === 200) {
           if (res.header && res.header.message === 'login') {
             wx.redirectTo({
@@ -39,6 +43,8 @@ const ajax = function (url, method, params, success, error) {
         }
       },
       fail: function (res) {
+      	console.log('====失败====')
+      	console.warn(res)
         error && error(res)
       }
     });
