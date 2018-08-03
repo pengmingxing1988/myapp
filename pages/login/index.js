@@ -20,50 +20,28 @@ Page({
    */
   onLoad: function (options) {
   },
-  loginClick: function (callback) {
-  	// 登录
-		wx.login({
-			success: res => {
-				console.log('====小程序登录接口调用成功的回调函数====')
-				console.log(res)
-				api.login(res.code, () => {
-					// 发送 res.code 到后台换取 openId, sessionKey, unionId
-					if (typeof callback === 'function') {
-					  callback();
-					} else {
-            wx.switchTab({
-						  url: '/pages/index/index'
-						});
-					}
-				});
-			},
-			fail: res => {
-				console.log('====小程序登录接口调用失败的回调函数====')
-				console.log(res)
-			}
-		})
-  },
   getUserInfo: function (e) {
-  	this.loginClick(() => {
-	    let userInfo = e.detail.userInfo
-	    if (userInfo) {
-	      wx.setStorageSync(storage.userInfo, userInfo)
-	      api.updateUserInfo({
-	        "nick_name": userInfo.nickName,
-	        "gender": userInfo.gender,
-	        "language": userInfo.language,
-	        "city": userInfo.city,
-	        "province": userInfo.province,
-	        "country": userInfo.country,
-	        "avatar_url": userInfo.avatarUrl
-	      })
-	      wx.switchTab({
-	        url: '/pages/index/index' // 首页
-	      })
-	    } else {
-	      console.log(e.detail.errMsg)
-	    }
-    });
+  	let userInfo = e.detail.userInfo
+	  if (userInfo) {
+	    wx.setStorageSync(storage.userInfo, userInfo)
+	    api.updateUserInfo({
+	      "nick_name": userInfo.nickName,
+	      "gender": userInfo.gender,
+	      "language": userInfo.language,
+	      "city": userInfo.city,
+	      "province": userInfo.province,
+	      "country": userInfo.country,
+	      "avatar_url": userInfo.avatarUrl
+	    })
+	    wx.switchTab({
+	      url: '/pages/index/index' // 首页
+	    })
+	  } else {
+	    console.log(e.detail.errMsg)
+	    wx.switchTab({
+	      url: '/pages/index/index' // 首页
+	    })
+	  }
   },
 
   /**

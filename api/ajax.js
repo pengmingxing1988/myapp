@@ -1,4 +1,5 @@
 const config = require('../utils/config');
+const api = require('./index.js')
 
 /**
  * ajax 请求
@@ -9,6 +10,7 @@ const config = require('../utils/config');
  * error: 失败回调函数
  */
 const ajax = function (url, method, params, success, error) {
+	let tempUrl = url
 	if (typeof params === 'function') {
 		success = params;
 		error = success;
@@ -31,9 +33,29 @@ const ajax = function (url, method, params, success, error) {
       	console.log(res)
         if (res.statusCode === 200) {
           if (res.header && res.header.message === 'login') {
-            wx.redirectTo({
-          		url: '/pages/login/index'
-          	});
+            // 登录
+            console.log('====自动登录====')
+			wx.login({
+				success: res => {
+					console.log('====小程序登录接口调用成功的回调函数====')
+					console.log(res)
+					ajax(`miniProgram/user/login.do`, 'get', {
+				      code: res.code,
+				      isLogin: true
+				    }, (lres) => {
+					  // 发送 res.code 到后台换取 openId, sessionKey, unionId
+					  console.log(`====登录成功, 回调ajax====`)
+					  ajax(tempUrl, method, params, success, error)
+					}, (err) => {
+					  console.log('====登录失败====')
+					  console.log(err)
+					})
+				},
+				fail: res => {
+					console.log('====小程序登录接口调用失败的回调函数====')
+					console.log(res)
+				}
+			})
           	return;
           }
           if (params && params.isLogin) {

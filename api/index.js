@@ -29,7 +29,7 @@ const extendObj = function (obj1, obj2) {
 
 let modules = {
 	login: login, // 登录
-  	updateUserInfo: updateUserInfo, // 更新用户信息(第一次新增，第二次开始就是更新)
+  updateUserInfo: updateUserInfo, // 更新用户信息(第一次新增，第二次开始就是更新)
 	getObjectPolicy: getObjectPolicy // 获取签名
 }
 extendObj(modules, ads);
