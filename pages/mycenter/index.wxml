@@ -7,4 +7,5 @@
   <li class="menu-list-item icon-arrow-right" bindtap="goAdsCreateOrEdit">发布广告</li>
   <li class="menu-list-item icon-arrow-right" bindtap="goAdsList">广告管理</li>
   <li class="menu-list-item icon-arrow-right" bindtap="goMyWatchedAdsList">看过的管理</li>
+  <li class="menu-list-item icon-arrow-right" bindtap="goJoinBusinessPage">加入商家</li>
 </ul>

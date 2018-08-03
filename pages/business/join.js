@@ -1,45 +1,19 @@
-// pages/mycenter/index.js
-const userUtil = require('../../utils/user.js')
+// pages/business/join.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    userInfo: null
+  
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    userUtil.getUserInfo((userInfo) => {
-      this.setData({
-        userInfo: userInfo
-      })
-    })
+  
   },
-
-  goAdsCreateOrEdit () { // 跳转广告发布页面
-    wx.navigateTo({
-      url: '/pages/mycenter/ads/create',
-    })
-  },
-	goAdsList () { // 跳转广告管理页面
-    wx.navigateTo({
-			url: '/pages/mycenter/ads/list',
-		})
-	},
-	goMyWatchedAdsList () { // 跳转到我看过的广告页面
-    wx.navigateTo({
-			url: '/pages/mycenter/ads/watched'
-		});
-	},
-	goJoinBusinessPage () { // 跳转到加入商家页面
-		wx.navigateTo({
-			url: '/pages/business/join'
-		});
-	},
 
   /**
    * 生命周期函数--监听页面初次渲染完成
