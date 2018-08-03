@@ -42,7 +42,14 @@ const ajax = function (url, method, params, success, error) {
 					ajax(`miniProgram/user/login.do`, 'get', {
 				      code: res.code,
 				      isLogin: true
-				    }, (lres) => {
+				   }, (lres) => {
+				      if (lres.newUser) {
+				      	// 新用户跳转到授权页面
+				      	wx.redirectTo({
+			          		url: '/pages/login/index'
+			          	});
+				      	return
+				      }
 					  // 发送 res.code 到后台换取 openId, sessionKey, unionId
 					  console.log(`====登录成功, 回调ajax====`)
 					  ajax(tempUrl, method, params, success, error)
