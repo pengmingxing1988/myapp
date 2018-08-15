@@ -10,10 +10,10 @@
 	    <view class="bus-list-item" wx:for="{{datas}}" wx:for-index="index"
 	      data-index="{{index}}" data-value="{{item}}" wx:for-item="item" 
         wx:key="index" bindtap="goToDetail">
-          <image src='../../assets/images/default.png'></image>
+          <image src='{{aliyuncs}}{{item.img_file}}'></image>
           <view class='bus-list-item-text'>
-            <text class='text-title'>我的可乐鸡翅</text>
-            <text class='text-desc'>距离你100m</text>
+            <text class='text-title'>{{item.bus_name}}</text>
+            <text class='text-desc'>距离你{{item.distance||0}}m</text>
           </view>
 	    </view>
     </block>

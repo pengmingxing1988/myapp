@@ -27,6 +27,9 @@ Page({
       data[i] = this.data.formData[i]
     }
     api.businessQuery(data, (res) => {
+      res.topics.forEach((item) => {
+        item.img_file = item.img_file.split('_')[0]
+      })
       this.setData({
         datas: this.data.datas.concat(res.topics)
       });

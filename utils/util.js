@@ -157,7 +157,11 @@ const showToast = function (title, opts) {
 		title: title,
 		icon: opts.icon,
 		duration: opts.duration || 2000,
-		success: opts.success
+		success: () => {
+      if (opts.success) {
+        setTimeout(opts.success, opts.duration || 2000)
+      }
+    }
 	});
 }
 
@@ -181,7 +185,7 @@ const showError = function (title, opts) {
 	} else {
 		opts = opts || {}
 	}
-	opts.icon = 'error';
+  opts.icon = 'none';
 	showToast(title, opts);
 }
 

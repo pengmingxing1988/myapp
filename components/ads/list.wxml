@@ -26,7 +26,7 @@
 	      </view>
 	      <view class='ad_list-item-right'>
 	      	<image wx:if="{{item.file_type !== 'video'}}" src="{{aliyuncs}}{{item.a_file[0]}}" mode="scaleToFill"></image>
-		    <video wx:else src="{{aliyuncs}}{{item.a_file}}"></video>
+		      <image wx:else src="{{aliyuncs}}{{item.a_file}}?x-oss-process=video/snapshot,t_0,f_jpg,w_75,h_50"></image>
 	      </view>
 	    </view>
     </block>

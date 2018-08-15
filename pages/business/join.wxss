@@ -1,1 +1,86 @@
 /* pages/business/join.wxss */
+/* pages/ads/create.wxss */
+.form{
+  display:flex;
+  flex-direction:column;
+  padding:10px;
+}
+.form-row{
+  display:flex;
+  height:40px;
+  align-items:center;
+  font-size:12px;
+}
+.label-title{
+  width:90px;
+  display:flex;
+  justify-content:flex-end;
+  padding-right:10px;
+}
+.form-div{
+  display:flex;
+  flex:1;
+  align-items:center;
+  justify-content:flex-start;
+}
+.form-input{
+  border:1px solid #ccc;
+  border-radius:3px;
+  flex:1;
+  height:30px;
+  padding: 0 5px;
+}
+slider{width:100%;}
+.form-file{flex:none;}
+.form-file button{display:flex;}
+.btn-area{padding-top:10px;}
+.form-row-auto{
+  height:auto;
+  padding:5px 0;
+}
+.form-textarea{
+  display:flex;
+  flex:1;
+  width:100%;
+  height:100px;
+  border:1px solid #ccc;
+  border-radius:3px;
+  padding:5px;
+}
+.red{
+  color:#ff0000;
+}
+
+.file-list{
+	display:flex;
+	width:100%;
+	flex-wrap:wrap;
+	margin-bottom:-2px;
+}
+.file-item{
+	display:flex;
+	width:calc(25% - 2px);
+	height:50px;
+	margin-right:2px;
+	margin-bottom:2px;
+	position:relative;
+	align-items:center;
+	justify-content:center;
+}
+.file-item image,.file-item video{
+	width:100%;
+	height:100%;
+	border-radius:4px;
+	opacity:0.9;
+}
+.file-item .percent{
+	height:20px;
+	line-height:20px;
+	padding:0 4px;
+	background:rgba(0,0,0,0.3);
+	color:#fff;
+	position:absolute;
+	text-align:center;
+	font-size:12px;
+	border-radius:4px;
+}

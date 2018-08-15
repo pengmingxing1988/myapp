@@ -8,8 +8,8 @@
     "pages/mycenter/ads/list",
     "pages/mycenter/ads/create",
     "pages/login/index",
-    "pages/ads/detail",
-    "pages/business/join"
+    "pages/business/join",
+    "pages/ads/detail"
   ],
   "window": {
     "backgroundTextStyle": "light",

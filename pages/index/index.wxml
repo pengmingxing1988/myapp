@@ -1,12 +1,11 @@
 <!--index.wxml-->
 <view class="container">
-  <swiper wx:v-if="{{adsList.length}}" class="index-banner" duration="300" circular="true" autoplay="true">
-    <block>
-      <swiper-item class="index-banner-item">
-        <image class="index-banner-item" src="{{aliyuncs}}{{adsList[3].a_file}}" />
-        <text>{{adsList[3].title}}</text>
-      </swiper-item>
-    </block>
+  <swiper wx:if="{{adsList.length}}" class="index-banner" duration="300" circular="true" autoplay="true">
+    <swiper-item class="index-banner-item">
+      <image wx:if="{{adsList[0].file_type==='video'}}" class="index-banner-item" src="{{aliyuncs}}{{adsList[0].a_file}}?x-oss-process=video/snapshot,t_0,f_jpg,w_400,h_200" />
+      <image class="index-banner-item" src="{{aliyuncs}}{{adsList[0].a_file[0]}}" />
+      <text>{{adsList[0].title}}</text>
+    </swiper-item>
   </swiper>
   <adslist datas="{{adsList}}" bind:searchCallback="searchCallback"></adslist>
 </view>

@@ -60,20 +60,12 @@ Page({
   selectFile: function() { // 选择文件
 	  if (this.data.fileType === 'video') {
 			if (this.data.files.length >= 1) {
-				wx.showToast({
-					title: '最多1个视频',
-					icon: 'error',
-					duration: 2000,
-				})
+        util.error('最多1个视频')
 				return;
 			}
 			util.chooseVideo((res) => {
 				if (!util.checkSize(res.size)) {
-					wx.showToast({
-						title: '最大20M的视频',
-						icon: 'error',
-						duration: 2000,
-					})
+          util.error('最大20M的视频')
 					return;
 				}
 				let index = this.data.files.length;
@@ -86,11 +78,7 @@ Page({
 			return;
 		}
 		if (this.data.files.length >= 9) {
-			wx.showToast({
-				title: '最多9张图片',
-				icon: 'error',
-				duration: 2000,
-			})
+      util.error('最多9张图片')
 			return;
 		}
     util.chooseImage({
@@ -129,15 +117,15 @@ Page({
 		console.log(e.detail.value)
 		let d = e.detail.value
 		if (!d.title) {
-			util.showError('请输入标题');
+      util.error('请输入标题');
 			return;
 		}
 		if (!this.data.files.length) {
-			util.showError('请选择文件');
+      util.error('请选择文件');
 			return;
 		}
 		if (!d.price) {
-			util.showError('请输入价格');
+      util.error('请输入价格');
 			return;
 		}
 		let formData = {
@@ -154,10 +142,7 @@ Page({
 			price: d.price || 0
 		}
 		api.createAds(formData, () => {
-			wx.showToast({
-				title: '发布广告成功',
-				icon: 'success',
-				duration: 2000,
+      util.showToast('发布广告成功', {
 				success: () => {
 					wx.switchTab({
 						url: '/pages/mycenter/index'
@@ -165,11 +150,7 @@ Page({
 				}
 			})
 		}, () => {
-			wx.showToast({
-				title: '发布广告失败',
-				icon: 'none',
-				duration: 2000
-			})
+      util.error('发布广告失败')
 		})
 	}
 });
