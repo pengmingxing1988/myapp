@@ -9,7 +9,8 @@
     "pages/mycenter/ads/create",
     "pages/login/index",
     "pages/business/join",
-    "pages/ads/detail"
+    "pages/ads/detail",
+    "pages/business/detail"
   ],
   "window": {
     "backgroundTextStyle": "light",

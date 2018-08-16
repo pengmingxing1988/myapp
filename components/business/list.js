@@ -43,14 +43,14 @@ Component({
     },
     getParams() {
       let formData = {}
-      let title = this.data.formData.title
-      if (title) {
-        formData.title = title
+      let bus_name = this.data.formData.bus_name
+      if (bus_name) {
+        formData.bus_name = bus_name
       }
       return formData
     },
     titleChange(e) {
-      this.data.formData.title = e.detail.value
+      this.data.formData.bus_name = e.detail.value
       this.setData({
         formData: this.data.formData
       })
