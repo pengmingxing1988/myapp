@@ -1,0 +1,117 @@
+<!--pages/business/join.wxml-->
+<!--审核中\下架-->
+<form wx:if="{{bus_status==1 || bus_status==2}}" class='form' bindsubmit="cancelFormSubmit">
+  <view class="form-row">
+    <label class='label-title'>商家名称</label>
+    <div class="form-div">
+      {{bus_name}}
+    </div>
+  </view>
+	<view class="form-row form-row-auto">
+		<label class='label-title'>联系人</label>
+		<div class="form-div">
+		  {{contact}}
+		</div>
+	</view>
+  <view class="form-row form-row-auto">
+		<label class='label-title'>联系电话</label>
+		<div class="form-div">
+			{{telephone}}
+		</div>
+	</view>
+  <view class="form-row form-row-auto">
+		<label class='label-title'>地址</label>
+		<div class="form-div">
+			{{address}}
+		</div>
+	</view>
+	<view class="form-row form-row-auto" style="min-height:0px;" wx:if="{{fileNames1.length}}">
+		<label class='label-title'>商家图片</label>
+		<div class="form-div">
+			<view class="file-list">
+				<view class="file-item" wx:for="{{fileNames1}}" wx:for-item="file" wx:for-index="index" wx:key="index">
+					<image src="{{aliyuncs}}{{file}}"></image>
+				</view>
+			</view>
+		</div>
+	</view>
+	<view class="form-row form-row-auto" style="min-height:0px;" wx:if="{{fileNames2.length}}">
+		<label class='label-title'>商家资质</label>
+		<div class="form-div">
+			<view class="file-list">
+				<view class="file-item" wx:for="{{fileNames2}}" wx:for-item="file" wx:for-index="index" wx:key="index">
+					<image src="{{aliyuncs}}{{file}}"></image>
+				</view>
+			</view>
+		</div>
+	</view>
+  <view class="btn-area">
+    <button wx:if="{{bus_status==1}}">等待审核</button>
+    <button wx:eif="{{bus_status==2}}" type="primary" formType="submit">下架商家</button>
+  </view>
+</form>
+
+<!--申请\重新上架-->
+<form wx:else class='form' bindsubmit="formSubmit">
+  <view class="form-row">
+    <label class='label-title'><font class="red">*</font>商家名称{{bus_status}}</label>
+    <div class="form-div">
+      <input type='text' class='form-input' name="bus_name" value='{{bus_name}}' placeholder="请输入商家名称" auto-focus/>
+    </div>
+  </view>
+	<view class="form-row form-row-auto">
+		<label class='label-title'><font class="red">*</font>联系人</label>
+		<div class="form-div">
+			<input type='text' class='form-input' name="contact" value='{{contact}}' placeholder="请输入联系人"/>
+		</div>
+	</view>
+  <view class="form-row form-row-auto">
+		<label class='label-title'><font class="red">*</font>联系电话</label>
+		<div class="form-div">
+			<input type='text' class='form-input' name="telephone" value='{{telephone}}' placeholder="请输入联系电话"/>
+		</div>
+	</view>
+  <view class="form-row form-row-auto">
+		<label class='label-title'><font class="red">*</font>地址</label>
+		<div class="form-div">
+			<input type='text' class='form-input' name="address" value='{{address}}' placeholder="请输入地址"/>
+		</div>
+	</view>
+  <view class="form-row">
+    <label class='label-title'><font class="red">*</font>商家图片</label>
+    <div class="form-div form-file">
+      <button type="primary" size='mini' bindtap='selectPicFile1'>选择附件</button>
+    </div>
+  </view>
+	<view class="form-row form-row-auto" style="min-height:0px;" wx:if="{{files1.length}}">
+		<label class='label-title'></label>
+		<div class="form-div">
+			<view class="file-list">
+				<view class="file-item" wx:for="{{files1}}" wx:for-item="file" wx:for-index="index" wx:key="index">
+					<image src="{{file}}"></image>
+					<text class="percent">{{progresses1[index]}}</text>
+				</view>
+			</view>
+		</div>
+	</view>
+  <view class="form-row">
+    <label class='label-title'><font class="red">*</font>商家资质</label>
+    <div class="form-div form-file">
+      <button type="primary" size='mini' bindtap='selectPicFile2'>选择附件</button>
+    </div>
+  </view>
+	<view class="form-row form-row-auto" style="min-height:0px;" wx:if="{{files2.length}}">
+		<label class='label-title'></label>
+		<div class="form-div">
+			<view class="file-list">
+				<view class="file-item" wx:for="{{files2}}" wx:for-item="file" wx:for-index="index" wx:key="index">
+					<image src="{{file}}"></image>
+					<text class="percent">{{progresses2[index]}}</text>
+				</view>
+			</view>
+		</div>
+	</view>
+  <view class="btn-area">
+    <button type="primary" formType="submit">提交</button>
+  </view>
+</form>

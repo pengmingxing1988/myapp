@@ -1,12 +1,14 @@
 // pages/mycenter/index.js
 const userUtil = require('../../utils/user.js')
+const api = require('../../api/index.js')
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    userInfo: null
+    userInfo: null,
+    businessInfo: null
   },
 
   /**
@@ -17,6 +19,13 @@ Page({
       this.setData({
         userInfo: userInfo
       })
+    })
+    api.queryBusinessById((res) => {
+      if (res.topics && res.topics.length) {
+        this.setData({
+          businessInfo: res.topics[0]
+        })
+      }
     })
   },
 
@@ -37,9 +46,14 @@ Page({
 	},
 	goJoinBusinessPage () { // 跳转到加入商家页面
 		wx.navigateTo({
-			url: '/pages/business/join'
+			url: '/pages/mycenter/business/join'
 		});
-	},
+  },
+  goBusinessDetailPage() { // 跳转到商家详情页面
+    wx.navigateTo({
+      url: '/pages/mycenter/business/detail'
+    });
+  },
 
   /**
    * 生命周期函数--监听页面初次渲染完成

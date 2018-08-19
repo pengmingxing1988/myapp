@@ -7,8 +7,8 @@
     "pages/mycenter/ads/watched",
     "pages/mycenter/ads/list",
     "pages/mycenter/ads/create",
+    "pages/mycenter/business/join",
     "pages/login/index",
-    "pages/business/join",
     "pages/ads/detail",
     "pages/business/detail"
   ],

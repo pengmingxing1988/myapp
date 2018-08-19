@@ -1,12 +1,19 @@
 // pages/business/join.js
-const api = require('../../api/index.js');
-const util = require('../../utils/util');
+const api = require('../../../api/index.js');
+const util = require('../../../utils/util');
+const config = require('../../../utils/config');
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    aliyuncs: config.aliyuncs,
+    bus_name: '',
+    contact: '',
+    telephone: '',
+    address: '',
+    bus_status: '',
     dimension: null,
     longitude: null,
     files1: [], // 商家图片
@@ -30,6 +37,20 @@ Page({
         this.setData({
           dimension: latitude,//纬度 
           longitude: longitude//经度 
+        })
+      }
+    })
+    api.queryBusinessById((res) => {
+      if (res.topics && res.topics.length) {
+        let d = res.topics[0]
+        this.setData({
+          bus_name: d.bus_name,
+          contact: d.contact,
+          telephone: d.telephone,
+          address: d.address,
+          bus_status: d.bus_status,
+          fileNames1: d.img_file ? d.img_file.split('_') : [],
+          fileNames2: d.bus_certificates ? d.bus_certificates.split('_') : []
         })
       }
     })
@@ -128,11 +149,11 @@ Page({
       util.error('请输入地址');
       return;
     }
-    if (!this.data.files1.length) {
+    if (!this.data.fileNames1.length) {
       util.error('请上传商家图片');
       return;
     }
-    if (!this.data.files2.length) {
+    if (!this.data.fileNames2.length) {
       util.error('请上传商家资质');
       return;
     }
@@ -158,53 +179,17 @@ Page({
       util.error('申请提交失败')
     })
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-  
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-  
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-  
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-  
+  cancelFormSubmit(e) { // 表单提交
+    api.businessCancel(() => {
+      util.success('下架成功', {
+        success: () => {
+          wx.switchTab({
+            url: '/pages/mycenter/index'
+          })
+        }
+      })
+    }, () => {
+      util.error('下架失败')
+    })
   }
 })

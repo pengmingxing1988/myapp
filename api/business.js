@@ -33,8 +33,19 @@ const businessCancel = function (data, success, error) {
 	ajax.post('mobile/business/cancelBusiness.do', data, success, error);
 }
 
+/**
+ * 获取相加详情
+ * @param {Object} data
+ * @param {Object} success
+ * @param {Object} error
+ */
+const queryBusinessById = function (data, success, error) {
+  ajax.post('mobile/advertisement/queryBusinessById.do', data, success, error);
+}
+
 module.exports = {
 	businessCreate: businessCreate, //新增商家信息
 	businessQuery: businessQuery, //查询商家信息
-	businessCancel: businessCancel //商家下架接口
+	businessCancel: businessCancel, //商家下架接口
+  queryBusinessById: queryBusinessById
 }

@@ -94,7 +94,6 @@ Page({
   },
   //滑动事件处理
   touchmove: function(e) {
-    debugger
     util.touchMoveEvent.call(this, e, (index, bool) => {
       if (bool) {
         this.data.adsList.forEach(function(v, i) {

@@ -42,25 +42,8 @@ App({
   globalData: {
   	latitude: null, //纬度
   	longitude: null, //经度
-  	adsDetail: {
-			"business": "business",
-			"distance": "0",
-			"total_count": "100",
-			"a_file": ["dCkEKPz8jArihiFQrGXDJHEpBJe3ezBd1530782333193.png", "mmWfhaRe5kSBnhFjZNnyY4tzFQTJAjF71530782333412.png", "H7K8NEcPttW53xEyySDrWYKNnErZNn7b1530782333733.jpg"],
-			"title": "测试标题002测试标题002测试标题002测试标题002测试标题002测试标题002测试标题002",
-			"content": "测试内容002",
-			"a_type": "1",
-			"interval_day": "0",
-			"price": "1",
-			"file_type": "img",
-			"creater": "122351f8f17343009bd2447722e17cc6",
-			"id": "703dd22e2a7c2dede0532f6612ac4050",
-			"create_date": "2018-07-05 17:19:10 ",
-			"dimension": "0",
-			"longitude": "",
-			"curr_count": "0",
-			"a_status": "1"
-		},
-    userInfo: null
+  	adsDetail: {},
+    userInfo: null,
+    businessInfo: null
   }
 })

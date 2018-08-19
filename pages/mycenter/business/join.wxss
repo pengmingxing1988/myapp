@@ -1,5 +1,4 @@
 /* pages/business/join.wxss */
-/* pages/ads/create.wxss */
 .form{
   display:flex;
   flex-direction:column;

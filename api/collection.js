@@ -44,7 +44,13 @@ const delUserCollection = function (data, success, error) {
  */
 const queryUserCollection = function (data, success, error) {
 	ajax.post('mobile/collection/queryUserCollection.do', data, (res) => {
-	  	res.topics.forEach((item) => {
+    if (!res) {
+      res = {
+        topics: [],
+        totalCount: []
+      }
+    }
+	  res.topics.forEach((item) => {
 			if (item.file_type === 'img') {
 				item.a_file = item.a_file.split('_');
 			}
