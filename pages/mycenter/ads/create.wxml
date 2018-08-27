@@ -46,13 +46,7 @@
   <view class="form-row">
     <label class='label-title'>间隔天数</label>
     <div class="form-div">
-			<checkbox-group bindchange="intervalDayChange">
-				<label class="checkbox">
-					<checkbox value="1"/>
-				</label>
-			</checkbox-group>
-      <input type='number' name="interval_day" wx:if="{{showIntervalDay}}" class='form-input' placeholder="请输入间隔天数"/>
-			<label wx:else>默认0,表示不能重复点击</label>
+      <input type='number' name="interval_day" class='form-input' placeholder="请输入间隔天数"/>
     </div>
   </view>
   <view class="form-row">
@@ -74,16 +68,10 @@
 	<view class="form-row">
 		<label class='label-title'>限制范围(公里)</label>
 		<div class="form-div">
-			<checkbox-group bindchange="limitAreaChange">
-				 <label class="checkbox">
-					<checkbox value="1"/>
-				</label>
-			</checkbox-group>
-			<input type='number' name="distance" wx:if="{{showLimitArea}}" class='form-input' placeholder="请输入限制范围"/>
-			<label wx:else>默认0,表示不限制范围</label>
+			<input type='number' name="distance" class='form-input' placeholder="请输入限制范围"/>
 		</div>
 	</view>
-  <view class="form-row form-row-auto" wx:if="{{showLimitArea}}">
+  <view class="form-row form-row-auto">
     <label class='label-title'>定位</label>
     <div class="form-div">
       <map id="map" longitude="{{longitude}}" latitude="{{latitude}}" scale="18" controls="{{controls}}" show-location style="width: 100%; height:190px;"></map>
