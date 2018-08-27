@@ -1,5 +1,6 @@
 <!--pages/business/join.wxml-->
 <!--审核中\下架-->
+<view wx:if="{{loadEnd==true}}">
 <form wx:if="{{bus_status==1 || bus_status==2}}" class='form' bindsubmit="cancelFormSubmit">
   <view class="form-row">
     <label class='label-title'>商家名称</label>
@@ -115,3 +116,7 @@
     <button type="primary" formType="submit">提交</button>
   </view>
 </form>
+</view>
+<view wx:else>
+加载中...
+</view>

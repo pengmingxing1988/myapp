@@ -8,6 +8,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    loadEnd: false,
     aliyuncs: config.aliyuncs,
     bus_name: '',
     contact: '',
@@ -53,6 +54,9 @@ Page({
           fileNames2: d.bus_certificates ? d.bus_certificates.split('_') : []
         })
       }
+      this.setData({
+        loadEnd: true
+      });
     })
   },
   uploadFile: function (files, index, callback, callback1) {
