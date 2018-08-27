@@ -13,6 +13,6 @@
   <text class="ads_detail_content">{{detail.content}}</text>
   <view class="ads_detail_df">
   	<text class="ads_detail_time">{{detail.create_date}}</text>
-  	<view class="ads_detail_favorite icon-favorite {{favorite?'current':''}}" bindtap="favoriteClick"></view>
   </view>
+  <button type="primary" class='favorite_button' bindtap='favoriteClick'>{{favorite?'取消收藏':'收藏'}}</button>
 </view>

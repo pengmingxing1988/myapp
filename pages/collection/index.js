@@ -31,6 +31,9 @@ Page({
     api.queryUserCollection({
       c_type: 2
     }, (res) => {
+      res.topics.forEach((item) => {
+        item.img_file = item.img_file.split('_')[0]
+      })
       this.setData({
         businessList: res.topics
       });

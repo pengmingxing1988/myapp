@@ -1,2 +1,48 @@
 <!--pages/business/detail.wxml-->
-<text>pages/business/detail.wxml</text>
+<form class='form'>
+  <view class="form-row">
+    <label class='label-title'>商家名称</label>
+    <div class="form-div">
+      {{bus_name}}
+    </div>
+  </view>
+	<view class="form-row form-row-auto">
+		<label class='label-title'>联系人</label>
+		<div class="form-div">
+		  {{contact}}
+		</div>
+	</view>
+  <view class="form-row form-row-auto">
+		<label class='label-title'>联系电话</label>
+		<div class="form-div">
+			{{telephone}}
+		</div>
+	</view>
+  <view class="form-row form-row-auto">
+		<label class='label-title'>地址</label>
+		<div class="form-div">
+			{{address}}
+		</div>
+	</view>
+	<view class="form-row form-row-auto" style="min-height:0px;" wx:if="{{fileNames1.length}}">
+		<label class='label-title'>商家图片</label>
+		<div class="form-div">
+			<view class="file-list">
+				<view class="file-item" wx:for="{{fileNames1}}" wx:for-item="file" wx:for-index="index" wx:key="index">
+					<image data-value='{"type":1,"index":{{index}}}' src="{{aliyuncs}}{{file}}" bindtap='previewImage'></image>
+				</view>
+			</view>
+		</div>
+	</view>
+	<view class="form-row form-row-auto" style="min-height:0px;" wx:if="{{fileNames2.length}}">
+		<label class='label-title'>商家资质</label>
+		<div class="form-div">
+			<view class="file-list">
+				<view class="file-item" wx:for="{{fileNames2}}" wx:for-item="file" wx:for-index="index" wx:key="index">
+					<image data-value='{"type":2,"index":{{index}}}' src="{{aliyuncs}}{{file}}" bindtap='previewImage'></image>
+				</view>
+			</view>
+		</div>
+	</view>
+  <button type="primary" class='favorite_button' bindtap='favoriteClick'>{{favorite?'取消收藏':'收藏商家'}}</button>
+</form>
