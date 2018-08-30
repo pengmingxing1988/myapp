@@ -1,5 +1,7 @@
 const config = require('../utils/config');
 const api = require('./index.js')
+const conUtil = require('../utils/constant.js')
+const storage = conUtil.Storage
 
 /**
  * ajax 请求
@@ -51,6 +53,8 @@ const ajax = function(url, method, params, success, error) {
                     url: '/pages/login/index'
                   });
                   return
+                } else {
+                  wx.setStorageSync(storage.userInfo, lres.user)
                 }
                 // 发送 res.code 到后台换取 openId, sessionKey, unionId
                 console.log(`====登录成功, 回调ajax====`)
@@ -74,6 +78,9 @@ const ajax = function(url, method, params, success, error) {
       }
     },
     fail: function(res) {
+      wx.showToast({
+        title: res.message,
+      })
       console.log('====失败====')
       console.warn(res)
       error && error(res)

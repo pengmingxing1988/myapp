@@ -15,18 +15,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    userUtil.getUserInfo((userInfo) => {
-      this.setData({
-        userInfo: userInfo
-      })
-    })
-    api.queryBusinessById((res) => {
-      if (res.topics && res.topics.length) {
-        this.setData({
-          businessInfo: res.topics[0]
-        })
-      }
-    })
+    
   },
 
   goAdsCreateOrEdit () { // 跳转广告发布页面
@@ -59,14 +48,25 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-  
+    
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+    userUtil.getUserInfo((userInfo) => {
+      this.setData({
+        userInfo: userInfo
+      })
+    })
+    api.queryBusinessById((res) => {
+      if (res.topics && res.topics.length) {
+        this.setData({
+          businessInfo: res.topics[0]
+        })
+      }
+    })
   },
 
   /**
