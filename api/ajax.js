@@ -36,7 +36,7 @@ const ajax = function(url, method, params, success, error) {
       console.log('====成功====')
       console.log(res)
       if (res.statusCode === 200) {
-        if (res.header && res.header.message === 'login') {
+        if (res.data && res.data.status == 401) {
           // 登录
           console.log('====自动登录====')
           wx.login({
@@ -47,7 +47,7 @@ const ajax = function(url, method, params, success, error) {
                 code: res.code,
                 isLogin: true
               }, (lres) => {
-                if (lres.newUser) {
+                if (lres.newUser || lres.status == 500) {
                   // 新用户跳转到授权页面
                   wx.redirectTo({
                     url: '/pages/login/index'
@@ -79,7 +79,7 @@ const ajax = function(url, method, params, success, error) {
     },
     fail: function(res) {
       wx.showToast({
-        title: res.message,
+        title: '请求失败',
       })
       console.log('====失败====')
       console.warn(res)
