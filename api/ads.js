@@ -8,10 +8,9 @@ const _adsRequest = function (name, args) {
 	  if (typeof args[0] === 'function') {
 	  	let f = args[0]
 	  	args[0] = (res) => {
-	  		res.topics.forEach((item) => {
-	  			item.$showDel = false;
+	  	res.topics.forEach((item) => {
+	  		item.$showDel = false;
 				if (item.file_type === 'img') {
-					debugger
 					item.a_file = item.a_file.split('_');
 				}
 			});

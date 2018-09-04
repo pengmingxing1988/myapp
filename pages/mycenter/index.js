@@ -15,7 +15,6 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
   },
 
   goAdsCreateOrEdit () { // 跳转广告发布页面
@@ -56,6 +55,7 @@ Page({
    */
   onShow: function () {
     userUtil.getUserInfo((userInfo) => {
+      console.log(userInfo)
       this.setData({
         userInfo: userInfo
       })

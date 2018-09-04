@@ -17,7 +17,11 @@ Page({
   getUserInfo: function (e) {
     let userInfo = e.detail.userInfo
     if (userInfo) {
-      wx.setStorageSync(storage.userInfo, userInfo)
+      let nInfo = {}
+      for (let i in userInfo) {
+        nInfo[i.toUpperCase()] = userInfo[i]
+      }
+      wx.setStorageSync(storage.userInfo, nInfo)
       api.updateUserInfo({
         "nick_name": userInfo.nickName,
         "gender": userInfo.gender,
