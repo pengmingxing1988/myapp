@@ -11,7 +11,7 @@
   font-size:12px;
 }
 .label-title{
-  width:90px;
+  width:66px;
   display:flex;
   justify-content:flex-end;
   padding-right:10px;
@@ -58,8 +58,8 @@ slider{width:100%;}
 }
 .file-item{
 	display:flex;
-	width:calc(25% - 2px);
-	height:50px;
+	width:calc(50% - 2px);
+	height:70px;
 	margin-right:2px;
 	margin-bottom:2px;
 	position:relative;

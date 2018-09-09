@@ -14,5 +14,11 @@
   <view class="ads_detail_df">
   	<text class="ads_detail_time">{{detail.create_date}}</text>
   </view>
-  <button type="primary" class='favorite_button' bindtap='favoriteClick'>{{favorite?'取消收藏':'收藏'}}</button>
+  <view class='related_ads' wx:if="{{adsList.length}}">
+    相关广告：
+  </view>
+  <adslist datas="{{adsList}}" showSearch="{{false}}" wx:if="{{adsList.length}}"></adslist>
+  <view class='button_container'>
+    <button type="primary" class='favorite_button' bindtap='favoriteClick'>{{favorite?'取消收藏':'收藏'}}</button>
+  </view>
 </view>

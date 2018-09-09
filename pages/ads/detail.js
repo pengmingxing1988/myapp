@@ -12,6 +12,7 @@ Page({
   	aliyuncs: config.aliyuncs,
   	favorite: false,
   	detail: {},
+    adsList: [],
   	timeoutId: null
   },
 
@@ -30,6 +31,11 @@ Page({
   			favorite: res.collection === 1
   		});
   	});
+    api.getAdsList({start:0, limit:5, business: this.data.detail.business}, (res) => {
+      this.setData({
+        adsList: res.topics
+      });
+    });
   },
   
   /**

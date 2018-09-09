@@ -1,4 +1,5 @@
 /* pages/ads/detail.wxss */
+.container{padding-bottom:60px;}
 .ads_detail_banner{display:flex;width:100%;height:200px;}
 .ads_detail_banner swiper-item{display:flex;width:100%;height:100%;align-items:center;justify-content:center;}
 .ads_detail_banner video{width:100%;height:100%;}
@@ -8,7 +9,16 @@
 .ads_detail_time{color:#555;font-size:12px;}
 .ads_detail_favorite{font-size:20px;}
 .ads_detail_favorite.current{color:#d81e06;}
-
+.related_ads{display:flex;width:100%;height:30px;line-height:30px;font-size:12px;margin-left:20px;align-items:flex-start;margin-top:20px;}
+.button_container{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position: fixed;
+  width:100%;
+  bottom:10px;
+  z-index:10;
+}
 .favorite_button{
     height:40px;
     background: #1AAD19;
@@ -18,9 +28,6 @@
     background: -webkit-gradient(linear, 0 0, 0 100%, from(#1AAD19), to(#179B16));
     background: -webkit-linear-gradient(#1AAD19, #179B16);
     background: linear-gradient(#1AAD19, #179B16);
-    position: fixed;
-    bottom:10px;
-    right:10px;
     color: #fff;
     font-size: 12px;
     text-align: center;

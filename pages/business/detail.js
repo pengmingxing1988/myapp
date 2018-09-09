@@ -11,7 +11,9 @@ Page({
   data: {
     favorite: false,
     aliyuncs: config.aliyuncs,
+    adsList: [],
     bus_name: '',
+    content: '',
     contact: '',
     telephone: '',
     address: '',
@@ -33,6 +35,7 @@ Page({
     let d = app.globalData.businessDetail
     this.setData({
       bus_name: d.bus_name,
+      content: d.content,
       contact: d.contact,
       telephone: d.telephone,
       address: d.address,
@@ -45,6 +48,11 @@ Page({
     }, (res) => {
       this.setData({
         favorite: res.collection === 1
+      });
+    });
+    api.getAdsList({ start: 0, limit: 5, business: d.id }, (res) => {
+      this.setData({
+        adsList: res.topics
       });
     });
   },

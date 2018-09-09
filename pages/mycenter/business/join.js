@@ -15,6 +15,7 @@ Page({
     telephone: '',
     address: '',
     bus_status: '',
+    content: '',
     dimension: null,
     longitude: null,
     files1: [], // 商家图片
@@ -46,6 +47,7 @@ Page({
         let d = res.topics[0]
         this.setData({
           bus_name: d.bus_name,
+          content: d.content,
           contact: d.contact,
           telephone: d.telephone,
           address: d.address,

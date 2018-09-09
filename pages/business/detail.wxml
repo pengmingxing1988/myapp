@@ -6,6 +6,12 @@
       {{bus_name}}
     </div>
   </view>
+  <view class="form-row form-row-auto">
+		<label class='label-title'>商家简介</label>
+		<div class="form-div">
+		  {{content}}
+		</div>
+	</view>
 	<view class="form-row form-row-auto">
 		<label class='label-title'>联系人</label>
 		<div class="form-div">
@@ -44,5 +50,11 @@
 			</view>
 		</div>
 	</view>
-  <button type="primary" class='favorite_button' bindtap='favoriteClick'>{{favorite?'取消收藏':'收藏商家'}}</button>
+  <view class='related_ads' wx:if="{{adsList.length}}">
+    相关广告：
+  </view>
+  <adslist datas="{{adsList}}" showSearch="{{false}}" wx:if="{{adsList.length}}"></adslist>
+  <view class='button_container'>
+    <button type="primary" class='favorite_button' bindtap='favoriteClick'>{{favorite?'取消收藏':'收藏商家'}}</button>
+  </view>
 </form>

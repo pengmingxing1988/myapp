@@ -7,12 +7,12 @@
 .ad_search .ad-input-search{position:relative;}
 .ad_search .ad-input-search image{width:10px;height:10px;position:absolute;top:calc(50% - 5px);left:8px;}
 .ad_search input{background-color:#F2F3F7;width:100px;color:#ACACAC;height:30px;line-height:30px;border-radius:15px;padding:0 20px;font-size:12px;}
-.ad_list-item{display:flex;flex:1;flex-direction:row;background-color:#fff;height:60px;padding:10px;border-bottom:1px solid #e6eaed;}
+.ad_list-item{display:flex;flex:1;flex-direction:row;background-color:#fff;height:70px;padding:10px;border-bottom:1px solid #e6eaed;}
 .ad_list-item .ad_list-item-left{display:flex;flex:1;flex-direction:column;}
 .ad_list-item-bottom{display:flex;justify-content:space-between;}
-.ad_list-item .ad_list-item-left .title{height:50px;font-size:14px;line-height:22px;font-weight:bold;color:#333;}
+.ad_list-item .ad_list-item-left .title{height:60px;font-size:14px;line-height:22px;font-weight:bold;color:#333;}
 .ad_list-item .ad_list-item-bottom{margin-bottom:-5px;}
 .ad_list-item .ad_list-item-bottom text{font-size:12px;color:#555;}
-.ad_list-item .ad_list-item-right{width:75px;display:flex;color:#fff;justify-content:center;margin-left:10px;}
-.ad_list-item .ad_list-item-right image,.ad_list-item-right video{width:75px;height:50px;background-color:#f8f8f8;}
+.ad_list-item .ad_list-item-right{width:100px;display:flex;color:#fff;justify-content:center;margin-left:10px;}
+.ad_list-item .ad_list-item-right image,.ad_list-item-right video{width:100px;height:70px;background-color:#f8f8f8;}
 .ad_list-no-data{display:flex;width:100%;height:40px;align-items:center;justify-content:center;font-size:12px;}

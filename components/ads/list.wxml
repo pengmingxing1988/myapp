@@ -21,7 +21,7 @@
 	      	<text class="title">{{item.title}}</text>
 	        <view class="ad_list-item-bottom">
 		       <text class="type">{{tools.getAdType(item.a_type)}}</text>
-		       <text class="place">{{item.file_type==='video'?'视频':'图文'}} / {{tools.formatDate(item.create_date)}}</text>
+		       <text class="place">{{tools.formatDate(item.create_date)}}</text>
 		    </view>
 	      </view>
 	      <view class='ad_list-item-right'>
