@@ -1,6 +1,7 @@
 const api = require('../../../api/index.js');
 const util = require('../../../utils/util');
-Page({
+var commonMixin = require('../../../mixins/commonMixin')
+Page(Object.assign({
 
   /**
    * 页面的初始数据
@@ -13,7 +14,9 @@ Page({
 		fileNames: [],
 		progresses: [],
 		showLimitArea: false,
-		showIntervalDay: false
+		showIntervalDay: false,
+    isDiabledDay: false, // 是否限制天数
+    isDisabledDistant: false // 是否限制范围
   },
   onLoad: function(){
     // 定位
@@ -141,16 +144,26 @@ Page({
 			distance: d.distance || 0,
 			price: d.price || 0
 		}
-		api.createAds(formData, () => {
-      util.showToast('发布广告成功', {
-				success: () => {
-					wx.switchTab({
-						url: '/pages/mycenter/index'
-					})
-				}
-			})
-		}, () => {
-      util.error('发布广告失败')
-		})
+    wx.showModal({
+      title: '您否是确认发布？',
+      content: '发布后需要支付'+d.price+'元',
+      success: function (res) {
+        if (res.confirm) {
+          api.createAds(formData, () => {
+            util.success('发布广告成功', {
+              success: () => {
+                wx.switchTab({
+                  url: '/pages/mycenter/index'
+                })
+              }
+            })
+          }, () => {
+            util.error('发布广告失败')
+          })
+        } else if (res.cancel) {
+          console.log('用户点击取消')
+        }
+      }
+    })
 	}
-});
+}, commonMixin));
