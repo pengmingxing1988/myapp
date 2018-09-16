@@ -42,6 +42,11 @@ Page({
       url: '/pages/mycenter/business/detail'
     });
   },
+  goBalancePage() { // 账户余额
+    wx.navigateTo({
+      url: '/pages/mycenter/balance/index'
+    });
+  },
 
   /**
    * 生命周期函数--监听页面初次渲染完成

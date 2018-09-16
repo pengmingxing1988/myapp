@@ -21,6 +21,11 @@ const getObjectPolicy = function (data, success, error) {
 	ajax.get('mobile/oss/postObjectPolicy.do', data, success, error);
 }
 
+// 获取账户余额
+const getAccount = function (success, error) {
+  ajax.get('mobile/user/myAccount.do', success, error)
+}
+
 const extendObj = function (obj1, obj2) {
 	for (let i in obj2) {
 		obj1[i] = obj2[i];
@@ -30,7 +35,8 @@ const extendObj = function (obj1, obj2) {
 let modules = {
 	login: login, // 登录
   updateUserInfo: updateUserInfo, // 更新用户信息(第一次新增，第二次开始就是更新)
-	getObjectPolicy: getObjectPolicy // 获取签名
+	getObjectPolicy: getObjectPolicy, // 获取签名
+  getAccount: getAccount // 获取账户余额
 }
 extendObj(modules, ads);
 extendObj(modules, collection);

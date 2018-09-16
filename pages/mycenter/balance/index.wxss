@@ -1,0 +1,4 @@
+/* pages/mycenter/balance/index.wxss */
+.balance{width:100%;text-align:center;display:flex;flex-direction:column;}
+.balance .number{font-weight:bold;}
+.button{display:flex;height:40px;align-items: center;justify-content:center;}

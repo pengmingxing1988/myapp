@@ -83,6 +83,7 @@ Page({
           longitude: app.globalData.longitude
         }, () => {
           wx.showToast({
+            icon: 'none',
             title: '获取1元红包',
           });
         });

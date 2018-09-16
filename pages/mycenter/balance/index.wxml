@@ -1,0 +1,8 @@
+<!--pages/mycenter/balance/index.wxml-->
+<view class='balance'>
+  <text>余额</text>
+  <text class='number'>{{total}}元</text>
+</view>
+<view class='button'>
+  <button type='primary' size='mini' bindtap='withdraw'>提现</button>
+</view>

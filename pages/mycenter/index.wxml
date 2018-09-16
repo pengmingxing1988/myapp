@@ -8,4 +8,5 @@
   <li class="menu-list-item icon-arrow-right" bindtap="goAdsList">广告管理</li>
   <li class="menu-list-item icon-arrow-right" bindtap="goMyWatchedAdsList">历史广告</li>
   <li class="menu-list-item icon-arrow-right" bindtap="goJoinBusinessPage">我的商家</li>
+  <li class="menu-list-item icon-arrow-right" bindtap="goBalancePage">我的余额</li>
 </ul>

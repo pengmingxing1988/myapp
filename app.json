@@ -10,7 +10,8 @@
     "pages/mycenter/business/join",
     "pages/login/index",
     "pages/ads/detail",
-    "pages/business/detail"
+    "pages/business/detail",
+    "pages/mycenter/balance/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
