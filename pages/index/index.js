@@ -7,6 +7,7 @@ var app = getApp();
 Page({
   data: {
 		aliyuncs: config.aliyuncs,
+    fixedSearch: false,
 		adsList: [],
     formData: {}
   },
@@ -58,5 +59,16 @@ Page({
       formData: e.detail
     })
     this.getAdsList()
+  },
+  onPageScroll (e) {
+    if (e.scrollTop >= 220) {
+      this.setData({
+        fixedSearch: true
+      })
+    } else {
+      this.setData({
+        fixedSearch: false
+      })
+    }
   }
 })

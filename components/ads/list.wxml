@@ -1,17 +1,24 @@
 <!--components/ads/adsList.wxml-->
 <wxs src="./list.wxs" module="tools" />
-<view class='ad_list'>
+<view class="ad_list {{fixedSearch?'fixedSearch':''}}">
 	<view class="ad_search" wx:if="{{showSearch}}">
+    <!--
 	  <picker range-key="name" value="{{index}}" range="{{adTypes}}" bindchange="adTypeChange">
 	    <view class="picker">
 	      {{formData.a_type ? tools.getAdType(formData.a_type) : '全部'}}
 	    </view>
       <image src='../../assets/svg/arrow-down.svg'></image>
 	  </picker>
+    -->
 	  <div class="ad-input-search">
       <image src='../../assets/svg/search.svg'></image>
 	  	<input placeholder="关键字" bindinput='titleChange'/>
 	  </div>
+    <div>
+      <button type="{{formData.a_type==1?'primary':'default'}}" bindtap='adTypeChange' data-value="1">推广</button>
+      <button type="{{formData.a_type==2?'primary':'default'}}" bindtap='adTypeChange' data-value="2">促销</button>
+      <button type="{{formData.a_type==3?'primary':'default'}}" bindtap='adTypeChange' data-value="3">需求</button>
+    </div>
 	</view>
 	<block wx:if="{{datas && datas.length}}">
 	    <view class="ad_list-item" wx:for="{{datas}}" wx:for-index="index"

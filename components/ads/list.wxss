@@ -1,12 +1,16 @@
 /* components/ads/adsList.wxss */
 /* 广告列表 */
 .ad_list{display:flex;flex-direction:column;width:98%;margin:0 auto;}
-.ad_search{margin:0 auto;margin-bottom:10px;display:flex;justify-content:space-between;align-items:center;width:220px;}
-.ad_search picker{background-color:#F2F3F7;width:50px;height:30px;line-height:30px;border-radius:15px;padding:0 10px;font-size:12px;position:relative;}
+.ad_list.fixedSearch{padding-top:30px;}
+.ad_list.fixedSearch .ad_search{position:fixed;z-index:999;top:0;left:0;}
+.ad_search{margin:0 auto;padding-bottom:10px;display:flex;justify-content:center;align-items:center;width:100%;background:#FFF;}
+.ad_search picker{background-color:#F2F3F7;width:50px;height:30px;line-height:30px;border-radius:15px;padding:0 10px;font-size:12px;position:relative;margin-right:10px;}
 .ad_search picker image{width:12px;height:12px;top:calc(50% - 6px);right:10px;position:absolute;}
-.ad_search .ad-input-search{position:relative;}
+.ad_search .ad-input-search{position:relative;margin-right:6px;}
 .ad_search .ad-input-search image{width:10px;height:10px;position:absolute;top:calc(50% - 5px);left:8px;}
 .ad_search input{background-color:#F2F3F7;width:100px;color:#ACACAC;height:30px;line-height:30px;border-radius:15px;padding:0 20px;font-size:12px;}
+.ad_search div{display:flex;}
+.ad_search div button{font-size:12px;border-radius:none;padding:0 10px;border:none;}
 .ad_list-item{display:flex;flex:1;flex-direction:row;background-color:#fff;height:70px;padding:10px;border-bottom:1px solid #e6eaed;}
 .ad_list-item .ad_list-item-left{display:flex;flex:1;flex-direction:column;}
 .ad_list-item-bottom{display:flex;justify-content:space-between;}

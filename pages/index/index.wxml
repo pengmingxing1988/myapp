@@ -7,5 +7,5 @@
       <text>{{adsList[0].title}}</text>
     </swiper-item>
   </swiper>
-  <adslist datas="{{adsList}}" bind:searchCallback="searchCallback"></adslist>
+  <adslist fixedSearch="{{fixedSearch}}" datas="{{adsList}}" bind:searchCallback="searchCallback"></adslist>
 </view>

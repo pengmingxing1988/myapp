@@ -11,6 +11,10 @@ Component({
   		type: Array,
   		value: []
   	},
+    fixedSearch: {
+      type: Boolean,
+      value: false
+    },
   	message: {
   		type: String,
   		value: '暂无广告'
@@ -73,7 +77,11 @@ Component({
       return formData
     },
     adTypeChange (e) {
-      this.data.formData.a_type = this.data.adTypes[parseInt(e.detail.value)].id
+      if (this.data.formData.a_type == e.currentTarget.dataset.value) {
+        this.data.formData.a_type = ''
+      } else {
+        this.data.formData.a_type = e.currentTarget.dataset.value
+      }
       this.setData({
         formData: this.data.formData
       })
