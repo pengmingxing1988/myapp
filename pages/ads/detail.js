@@ -13,7 +13,11 @@ Page({
   	favorite: false,
   	detail: {},
     adsList: [],
-  	timeoutId: null
+  	timeoutId: null,
+    rotate: 0,
+    widthNoneClass: true,
+    autoClass: false,
+    redClass: false
   },
 
   /**
@@ -23,7 +27,7 @@ Page({
   	this.setData({
   		detail: app.globalData.adsDetail || {}
   	});
-  	this.data.timeoutId = setTimeout(this.addAdvUser, 9000);
+    this.addAdvUser();
   	api.getUserCollectionByObject({
   		c_object: app.globalData.adsDetail.id
   	}, (res) => {
@@ -66,11 +70,34 @@ Page({
    * 用户点击记录接口 
    */
   addAdvUser: function () {
-  	api.addAdvUser({
-  		adv_id: this.data.detail.id,
-  		dimension: app.globalData.latitude,
-      longitude: app.globalData.longitude
-  	})
+    let rotate = 0;
+    this.data.timeoutId = setInterval(() => {
+      if (rotate >= 100) {
+        this.setData({
+          redClass: true
+        });
+        clearInterval(this.data.timeoutId);
+        api.addAdvUser({
+          adv_id: this.data.detail.id,
+          dimension: app.globalData.latitude,
+          longitude: app.globalData.longitude
+        }, () => {
+          wx.showToast({
+            title: '获取1元红包',
+          });
+        });
+        return
+      } else if (rotate >= 50) {
+        this.setData({
+          widthNoneClass: false,
+          autoClass: true
+        });
+      }
+      rotate++;
+      this.setData({
+        rotate: 3.6 * rotate
+      });
+    }, 100);
   },
 
   /**

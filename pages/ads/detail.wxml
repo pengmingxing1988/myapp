@@ -21,4 +21,15 @@
   <view class='button_container'>
     <button type="primary" class='favorite_button' bindtap='favoriteClick'>{{favorite?'取消收藏':'收藏'}}</button>
   </view>
+  <div class="red-money-fixed">
+    <div id="red-money" class="red-money">
+      <div class="clip {{autoClass?'auto':''}} {{redClass?'red':''}}">
+        <div class="left" style="transform:rotate({{rotate}}deg)"></div>
+        <div class="right {{widthNoneClass?'width-none':''}}"></div>
+      </div>
+      <div class="num">
+        <image src="../../assets/images/redmoney.svg"/>
+      </div>
+    </div>
+  </div>
 </view>
