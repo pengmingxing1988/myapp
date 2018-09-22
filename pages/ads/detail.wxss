@@ -81,33 +81,21 @@
   justify-content: center;
   position: fixed;
   width: 100%;
-  bottom: 10px;
+  bottom: 0;
   z-index: 10;
 }
 
-.favorite_button {
-  height: 40px;
-  background: #1aad19;
-  background: -moz-linear-gradient(#1aad19, #179b16);
-  background: -ms-linear-gradient(#1aad19, #179b16);
-  background: -o-linear-gradient(#1aad19, #179b16);
-  background: -webkit-gradient(linear, 0 0, 0 100%, from(#1aad19), to(#179b16));
-  background: -webkit-linear-gradient(#1aad19, #179b16);
-  background: linear-gradient(#1aad19, #179b16);
+.button_container view{display:flex;flex:1;align-items:center;justify-content:center;}
+
+.favorite_button,.price_button {
+  height: 50px;
+  background: #e4393c;
   color: #fff;
-  font-size: 12px;
-  text-align: center;
-  line-height: 40px;
+  font-size: 14px;
   white-space: nowrap;
-  -webkit-transition: all 0.3s ease-out;
-  -moz-transition: all 0.3s ease-out;
-  -ms-transition: all 0.3s ease-out;
-  -o-transition: all 0.3s ease-out;
-  transition: all 0.3s ease-out;
-  text-shadow: 0 2px 1px rgba(0, 0, 0, 0.25);
-  box-shadow: inset 0 2px 3px rgba(255, 255, 255, 0.13),
-                0 5px 8px rgba(0, 0, 0, 0.35),
-                0 3px 10px 4px rgba(0, 0, 0, 0.2);
+}
+.price_button{
+  background:#ff9600;
 }
 
 .red-money-fixed{

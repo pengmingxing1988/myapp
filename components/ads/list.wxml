@@ -28,7 +28,7 @@
 	      	<text class="title">{{item.title}}</text>
 	        <view class="ad_list-item-bottom">
 		       <text class="type">{{tools.getAdType(item.a_type)}}</text>
-		       <text class="place">{{tools.formatDate(item.create_date)}}</text>
+		       <text class="place">{{tools.getPrice(item.price/item.total_count)||0}}元/{{tools.formatDate(item.create_date)}}</text>
 		    </view>
 	      </view>
 	      <view class='ad_list-item-right'>

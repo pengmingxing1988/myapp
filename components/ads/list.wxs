@@ -2,6 +2,10 @@
 var formatDate = function (d) {
   return d.substring(0, 10)
 }
+// 获取红包
+var getPrice = function (d) {
+  return Math.floor(d * 100) / 100
+}
 // 获取广告类型
 var getAdType = function (t) {
   if (t == 1) {
@@ -16,5 +20,6 @@ var getAdType = function (t) {
 }
 module.exports = {
   formatDate: formatDate,
+  getPrice: getPrice,
   getAdType: getAdType
 };

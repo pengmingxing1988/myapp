@@ -19,7 +19,8 @@
   </view>
   <adslist datas="{{adsList}}" showSearch="{{false}}" wx:if="{{adsList.length}}"></adslist>
   <view class='button_container'>
-    <button type="primary" class='favorite_button' bindtap='favoriteClick'>{{favorite?'取消收藏':'收藏'}}</button>
+    <view class='price_button'>可获得0.1元</view>
+    <view class='favorite_button' bindtap='favoriteClick'>{{favorite?'取消收藏':'收藏'}}</view>
   </view>
   <div class="red-money-fixed">
     <div id="red-money" class="red-money">
