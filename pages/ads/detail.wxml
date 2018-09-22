@@ -19,7 +19,17 @@
   </view>
   <adslist datas="{{adsList}}" showSearch="{{false}}" wx:if="{{adsList.length}}"></adslist>
   <view class='button_container'>
-    <view class='price_button'>可获得0.1元</view>
+    <view class="price_button {{disabled==1 && time==0?'current':''}}">
+      <label wx:if="{{disabled===1 && time>0}}">
+        {{time}}S后可获取{{detail.price||0}}元
+      </label>
+      <label wx:elif="{{disabled===1 && time==0}}">
+        获得{{detail.price||0}}元
+      </label>
+      <label wx:else>
+        无法获取红包
+      </label>
+    </view>
     <view class='favorite_button' bindtap='favoriteClick'>{{favorite?'取消收藏':'收藏'}}</view>
   </view>
   <div class="red-money-fixed">

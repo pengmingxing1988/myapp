@@ -15,19 +15,36 @@ Page({
     adsList: [],
   	timeoutId: null,
     rotate: 0,
+    time: 10,
     widthNoneClass: true,
     autoClass: false,
-    redClass: false
+    redClass: false,
+    disabled: false
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    let d = app.globalData.adsDetail || {}
   	this.setData({
-  		detail: app.globalData.adsDetail || {}
+  		detail: d
   	});
-    this.addAdvUser();
+    wx.getLocation({
+      type: 'wgs84',
+      success: (res) => {
+        api.queryGetMoneyInfo({
+          adv_id: d.id,
+          longitude: res.longitude,
+          dimension: res.latitude
+        }, (res) => {
+          this.setData({
+            disabled: res.topics
+          })
+        })
+      }
+    })
+    //this.addAdvUser();
   	api.getUserCollectionByObject({
   		c_object: app.globalData.adsDetail.id
   	}, (res) => {
@@ -71,7 +88,12 @@ Page({
    */
   addAdvUser: function () {
     let rotate = 0;
+    let count = 0
     this.data.timeoutId = setInterval(() => {
+      count++
+      this.setData(({
+        time: 10 - Math.floor(count * 0.1)
+      }))
       if (rotate >= 100) {
         this.setData({
           redClass: true
@@ -84,7 +106,7 @@ Page({
         }, () => {
           wx.showToast({
             icon: 'none',
-            title: '获取1元红包',
+            title: '获取' + (this.data.detail.price || 0) + '元红包',
           });
         });
         return

@@ -85,17 +85,23 @@
   z-index: 10;
 }
 
-.button_container view{display:flex;flex:1;align-items:center;justify-content:center;}
+.button_container view{display:flex;align-items:center;justify-content:center;}
 
 .favorite_button,.price_button {
   height: 50px;
-  background: #e4393c;
+  background: #1AAD19;
   color: #fff;
   font-size: 14px;
   white-space: nowrap;
+  flex:1;
 }
 .price_button{
-  background:#ff9600;
+  flex:2;
+  background:#999;
+}
+.price_button.current{
+  flex:2;
+  background:#d81e06;
 }
 
 .red-money-fixed{

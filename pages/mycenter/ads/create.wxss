@@ -35,7 +35,7 @@
 slider{width:100%;}
 .form-file{flex:none;}
 .form-file button{display:flex;}
-.btn-area{padding-top:10px;position:fixed;bottom:0;left:0;z-index:10;width:100%;}
+.btn-area{padding-top:10px;position:fixed;bottom:0;left:0;z-index:9999;width:100%;}
 .form-row-auto{
   height:auto;
   padding:5px 0;

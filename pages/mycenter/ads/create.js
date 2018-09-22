@@ -146,7 +146,7 @@ Page(Object.assign({
 		}
     wx.showModal({
       title: '您否是确认发布？',
-      content: '发布后需要支付'+d.price+'元',
+      content: '发布后需要支付'+d.price*d.total_count+'元',
       success: function (res) {
         if (res.confirm) {
           api.createAds(formData, () => {

@@ -77,6 +77,10 @@ const getAdvertisementByUser = function (data, success, error) {
 	_adsRequest('advertisementByUser', arguments);
 }
 
+const queryGetMoneyInfo = function (data, success, error) {
+  ajax.post('mobile/advertisement/queryGetMoneyInfo.do', data, success, error)
+}
+
 module.exports = {
 	createAds: createAds, // 发布广告
 	getMyAdsList: getMyAdsList, // 获取我的广告列表
@@ -84,5 +88,6 @@ module.exports = {
 	getAdsById: getAdsById, // 根据广告ID获取广告详情
 	getMyWatchedAdsList: getMyWatchedAdsList, // 获取我看过的广告列表
 	addAdvUser: addAdvUser, // 用户点击记录接口
-	getAdvertisementByUser: getAdvertisementByUser // 获取看过此广告的用户
+	getAdvertisementByUser: getAdvertisementByUser, // 获取看过此广告的用户
+  queryGetMoneyInfo: queryGetMoneyInfo // 获取状态
 }
