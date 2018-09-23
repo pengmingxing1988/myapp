@@ -24,7 +24,7 @@
 }
 .public-container{
   position:fixed;
-  bottom:2px;
+  bottom:8px;
   right:2px;
   display:flex;
   align-items:center;
