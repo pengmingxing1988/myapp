@@ -98,7 +98,7 @@
       <input type='number' name="total_count" class='form-input' placeholder="请输入总投放数"/>
     </div>
   </view>
-  <view class="btn-area">
+  <cover-view class="btn-area">
     <button type="primary" formType="submit">发布并支付</button>
-  </view>
+  </cover-view>
 </form>
