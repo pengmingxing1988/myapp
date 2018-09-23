@@ -32,7 +32,14 @@
 slider{width:100%;}
 .form-file{flex:none;}
 .form-file button{display:flex;}
-.btn-area{padding-top:10px;}
+.btn-area{
+  width:100%;
+  padding-top:10px;
+  position:fixed;
+  bottom:0px;
+  left:0;
+  z-index:9999;
+}
 .form-row-auto{
   height:auto;
   padding:5px 0;

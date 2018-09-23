@@ -55,10 +55,10 @@
 			</view>
 		</div>
 	</view>
-  <view class="btn-area">
+  <cover-view class="btn-area">
     <button wx:if="{{bus_status==1}}">等待审核</button>
     <button wx:eif="{{bus_status==2}}" type="primary" formType="submit">下架商家</button>
-  </view>
+  </cover-view>
 </form>
 
 <!--申请\重新上架-->
@@ -130,9 +130,9 @@
 			</view>
 		</div>
 	</view>
-  <view class="btn-area">
+  <cover-view class="btn-area">
     <button type="primary" formType="submit">提交</button>
-  </view>
+  </cover-view>
 </form>
 </view>
 <view wx:else>
