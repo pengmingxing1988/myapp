@@ -9,7 +9,7 @@
   </swiper>
   <adslist style="margin-bottom:50px;" fixedSearch="{{fixedSearch}}" datas="{{adsList}}" bind:searchCallback="searchCallback"></adslist>
   <view class='public-container'>
-    <view class='publish'>
+    <view class='publish' bindtap='goAdsCreateOrEdit'>
       <image src='../../assets/images/add.png'></image>
       <text>广告</text>
     </view>

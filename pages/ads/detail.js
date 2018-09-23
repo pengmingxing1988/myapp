@@ -41,10 +41,12 @@ Page({
           this.setData({
             disabled: res.topics
           })
+          if (res.topics == 1) {
+            this.addAdvUser();
+          }
         })
       }
     })
-    //this.addAdvUser();
   	api.getUserCollectionByObject({
   		c_object: app.globalData.adsDetail.id
   	}, (res) => {

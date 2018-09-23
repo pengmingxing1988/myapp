@@ -70,5 +70,10 @@ Page({
         fixedSearch: false
       })
     }
+  },
+  goAdsCreateOrEdit() { // 跳转广告发布页面
+    wx.navigateTo({
+      url: '/pages/mycenter/ads/create',
+    })
   }
 })
